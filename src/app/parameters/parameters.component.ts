@@ -13,6 +13,8 @@ export class ParametersComponent implements OnInit {
   @ViewChild('rateInput',{static: false}) rateInputRef: ElementRef;
 
   installments: Array<Installment>;
+  add: number = 0;
+  total: string = "0";
 
   constructor() { }
 
@@ -47,9 +49,8 @@ export class ParametersComponent implements OnInit {
                               balanceAfterPay: String(this.installmentPrecisionRound((balanceAfterAmort-monthAmortization)))});
 
       balanceAfterAmort = balanceAfterAmort-monthAmortization;
+      this.add = this.add + (balanceAfterAmort*rateConvertedMonthFloat)+monthAmortization;
     }
+    this.total = String(this.installmentPrecisionRound(this.add));
   }
-
-
-
 }
