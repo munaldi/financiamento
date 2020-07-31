@@ -33,7 +33,7 @@ export class ParametersComponent implements OnInit {
     let amountConvetedFloat = parseFloat(this.amountInputRef.nativeElement.value);
     let installmentConvertedInt = parseInt(this.installmentsInputRef.nativeElement.value);
     let rateConvertedFloat = parseFloat(this.rateInputRef.nativeElement.value);
-
+    this.add = 0;
     this.installments = [];
     const rateConvertedMonthFloat = (Math.pow((1+(rateConvertedFloat/100)),(1/12))-1)
 
