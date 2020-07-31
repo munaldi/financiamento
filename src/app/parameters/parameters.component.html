@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="row">
+              <div class="col-sm-2 form-group">
+                  <label for="amount">Valor:</label>
+                  <input
+                      type="number"
+                      id="amount"
+                      class="form-control"
+                      value="200000"
+                      #amountInput>
+              </div>
+              <div class="col-sm-2 form-group">
+                  <label for="plots">Parcelas (Meses):</label>
+                  <input
+                      type="number"
+                      id="plots"
+                      class="form-control"
+                      value="360"
+                      #installmentsInput>
+              </div>
+              <div class="col-sm-2 form-group">
+                  <label for="rate">Taxa (a.a.):</label>
+                  <input
+                      type="number"
+                      id="rate"
+                      class="form-control"
+                      min="0.01"
+                      max="99.99"
+                      step="0.01"
+                      value="6.99"
+                      #rateInput/>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-xs-12">
+                  <button class="btn btn-success" (click)="callCalc()">Calcular</button>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-installments [getInstallments] = "installments"></app-installments>
+    </div>
+  </div>
+</div>
+

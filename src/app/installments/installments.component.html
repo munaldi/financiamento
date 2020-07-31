@@ -1,0 +1,24 @@
+<hr>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col" style="text-align: center;">Parcela</th>
+            <th scope="col" style="text-align: center;">Saldo Devedor</th>
+            <th scope="col" style="text-align: center;">Juros do Saldo Devedor</th>
+            <th scope="col" style="text-align: center;">Amotização</th>
+            <th scope="col" style="color: red; text-align: center;" >Parcela / Fluxo (Juros + Amort.)</th>
+            <th scope="col" style="text-align: center;">Saldo após Pagto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr scope="row"
+        *ngFor="let installment of getInstallments">
+            <td scope="col" style="text-align: center;">{{ installment.installment }}</td>
+            <td scope="col" style="text-align: center;">{{ installment.balanceDue }}</td>
+            <td scope="col" style="text-align: center;">{{ installment.rate }}</td>
+            <td scope="col" style="text-align: center;">{{ installment.amortization }}</td>
+            <td scope="col" style="color: red; text-align: center;">{{ installment.quota }}</td>
+            <td scope="col" style="text-align: center;">{{ installment.balanceAfterPay }}</td>
+        </tr>
+    </tbody>
+</table>
