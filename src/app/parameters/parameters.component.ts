@@ -53,4 +53,9 @@ export class ParametersComponent implements OnInit {
     }
     this.total = String(this.installmentPrecisionRound(this.add));
   }
+
+  clear() {
+    this.installments = [];
+    this.total = '0';
+  }
 }
